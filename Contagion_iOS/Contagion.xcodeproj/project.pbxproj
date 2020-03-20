@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAFFE76524256431007292AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76424256431007292AA /* AppDelegate.swift */; };
+		FAFFE76724256431007292AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76624256431007292AA /* SceneDelegate.swift */; };
+		FAFFE76A24256431007292AA /* Contagion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76824256431007292AA /* Contagion.xcdatamodeld */; };
+		FAFFE76C24256431007292AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76B24256431007292AA /* ContentView.swift */; };
+		FAFFE76E24256435007292AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFFE76D24256435007292AA /* Assets.xcassets */; };
+		FAFFE77124256435007292AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFFE77024256435007292AA /* Preview Assets.xcassets */; };
+		FAFFE77424256435007292AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFFE77224256435007292AA /* LaunchScreen.storyboard */; };
+		FAFFE77F24256435007292AA /* ContagionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE77E24256435007292AA /* ContagionTests.swift */; };
+		FAFFE78A24256435007292AA /* ContagionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE78924256435007292AA /* ContagionUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAFFE77B24256435007292AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFFE75924256431007292AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAFFE76024256431007292AA;
+			remoteInfo = Contagion;
+		};
+		FAFFE78624256435007292AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFFE75924256431007292AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAFFE76024256431007292AA;
+			remoteInfo = Contagion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAFFE76124256431007292AA /* Contagion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contagion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFFE76424256431007292AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAFFE76624256431007292AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FAFFE76924256431007292AA /* Contagion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contagion.xcdatamodel; sourceTree = "<group>"; };
+		FAFFE76B24256431007292AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FAFFE76D24256435007292AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAFFE77024256435007292AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAFFE77324256435007292AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAFFE77524256435007292AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAFFE77A24256435007292AA /* ContagionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContagionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFFE77E24256435007292AA /* ContagionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContagionTests.swift; sourceTree = "<group>"; };
+		FAFFE78024256435007292AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAFFE78524256435007292AA /* ContagionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContagionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFFE78924256435007292AA /* ContagionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContagionUITests.swift; sourceTree = "<group>"; };
+		FAFFE78B24256435007292AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAFFE75E24256431007292AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFFE77724256435007292AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFFE78224256435007292AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAFFE75824256431007292AA = {
+			isa = PBXGroup;
+			children = (
+				FAFFE76324256431007292AA /* Contagion */,
+				FAFFE77D24256435007292AA /* ContagionTests */,
+				FAFFE78824256435007292AA /* ContagionUITests */,
+				FAFFE76224256431007292AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAFFE76224256431007292AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE76124256431007292AA /* Contagion.app */,
+				FAFFE77A24256435007292AA /* ContagionTests.xctest */,
+				FAFFE78524256435007292AA /* ContagionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAFFE76324256431007292AA /* Contagion */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE76424256431007292AA /* AppDelegate.swift */,
+				FAFFE76624256431007292AA /* SceneDelegate.swift */,
+				FAFFE76B24256431007292AA /* ContentView.swift */,
+				FAFFE76D24256435007292AA /* Assets.xcassets */,
+				FAFFE77224256435007292AA /* LaunchScreen.storyboard */,
+				FAFFE77524256435007292AA /* Info.plist */,
+				FAFFE76824256431007292AA /* Contagion.xcdatamodeld */,
+				FAFFE76F24256435007292AA /* Preview Content */,
+			);
+			path = Contagion;
+			sourceTree = "<group>";
+		};
+		FAFFE76F24256435007292AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE77024256435007292AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FAFFE77D24256435007292AA /* ContagionTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE77E24256435007292AA /* ContagionTests.swift */,
+				FAFFE78024256435007292AA /* Info.plist */,
+			);
+			path = ContagionTests;
+			sourceTree = "<group>";
+		};
+		FAFFE78824256435007292AA /* ContagionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE78924256435007292AA /* ContagionUITests.swift */,
+				FAFFE78B24256435007292AA /* Info.plist */,
+			);
+			path = ContagionUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAFFE76024256431007292AA /* Contagion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFFE78E24256435007292AA /* Build configuration list for PBXNativeTarget "Contagion" */;
+			buildPhases = (
+				FAFFE75D24256431007292AA /* Sources */,
+				FAFFE75E24256431007292AA /* Frameworks */,
+				FAFFE75F24256431007292AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Contagion;
+			productName = Contagion;
+			productReference = FAFFE76124256431007292AA /* Contagion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAFFE77924256435007292AA /* ContagionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFFE79124256435007292AA /* Build configuration list for PBXNativeTarget "ContagionTests" */;
+			buildPhases = (
+				FAFFE77624256435007292AA /* Sources */,
+				FAFFE77724256435007292AA /* Frameworks */,
+				FAFFE77824256435007292AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAFFE77C24256435007292AA /* PBXTargetDependency */,
+			);
+			name = ContagionTests;
+			productName = ContagionTests;
+			productReference = FAFFE77A24256435007292AA /* ContagionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FAFFE78424256435007292AA /* ContagionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFFE79424256435007292AA /* Build configuration list for PBXNativeTarget "ContagionUITests" */;
+			buildPhases = (
+				FAFFE78124256435007292AA /* Sources */,
+				FAFFE78224256435007292AA /* Frameworks */,
+				FAFFE78324256435007292AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAFFE78724256435007292AA /* PBXTargetDependency */,
+			);
+			name = ContagionUITests;
+			productName = ContagionUITests;
+			productReference = FAFFE78524256435007292AA /* ContagionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAFFE75924256431007292AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Alex Bäuerle";
+				TargetAttributes = {
+					FAFFE76024256431007292AA = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					FAFFE77924256435007292AA = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = FAFFE76024256431007292AA;
+					};
+					FAFFE78424256435007292AA = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = FAFFE76024256431007292AA;
+					};
+				};
+			};
+			buildConfigurationList = FAFFE75C24256431007292AA /* Build configuration list for PBXProject "Contagion" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAFFE75824256431007292AA;
+			productRefGroup = FAFFE76224256431007292AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAFFE76024256431007292AA /* Contagion */,
+				FAFFE77924256435007292AA /* ContagionTests */,
+				FAFFE78424256435007292AA /* ContagionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAFFE75F24256431007292AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFFE77424256435007292AA /* LaunchScreen.storyboard in Resources */,
+				FAFFE77124256435007292AA /* Preview Assets.xcassets in Resources */,
+				FAFFE76E24256435007292AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFFE77824256435007292AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFFE78324256435007292AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAFFE75D24256431007292AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFFE76524256431007292AA /* AppDelegate.swift in Sources */,
+				FAFFE76724256431007292AA /* SceneDelegate.swift in Sources */,
+				FAFFE76C24256431007292AA /* ContentView.swift in Sources */,
+				FAFFE76A24256431007292AA /* Contagion.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFFE77624256435007292AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFFE77F24256435007292AA /* ContagionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFFE78124256435007292AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFFE78A24256435007292AA /* ContagionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAFFE77C24256435007292AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAFFE76024256431007292AA /* Contagion */;
+			targetProxy = FAFFE77B24256435007292AA /* PBXContainerItemProxy */;
+		};
+		FAFFE78724256435007292AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAFFE76024256431007292AA /* Contagion */;
+			targetProxy = FAFFE78624256435007292AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAFFE77224256435007292AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAFFE77324256435007292AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAFFE78C24256435007292AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAFFE78D24256435007292AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAFFE78F24256435007292AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Contagion/Preview Content\"";
+				DEVELOPMENT_TEAM = N2Y38KGFWX;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Contagion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alex.Contagion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAFFE79024256435007292AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Contagion/Preview Content\"";
+				DEVELOPMENT_TEAM = N2Y38KGFWX;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Contagion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alex.Contagion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAFFE79224256435007292AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2Y38KGFWX;
+				INFOPLIST_FILE = ContagionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alex.ContagionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contagion.app/Contagion";
+			};
+			name = Debug;
+		};
+		FAFFE79324256435007292AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2Y38KGFWX;
+				INFOPLIST_FILE = ContagionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alex.ContagionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contagion.app/Contagion";
+			};
+			name = Release;
+		};
+		FAFFE79524256435007292AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2Y38KGFWX;
+				INFOPLIST_FILE = ContagionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alex.ContagionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Contagion;
+			};
+			name = Debug;
+		};
+		FAFFE79624256435007292AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2Y38KGFWX;
+				INFOPLIST_FILE = ContagionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alex.ContagionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Contagion;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAFFE75C24256431007292AA /* Build configuration list for PBXProject "Contagion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFFE78C24256435007292AA /* Debug */,
+				FAFFE78D24256435007292AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFFE78E24256435007292AA /* Build configuration list for PBXNativeTarget "Contagion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFFE78F24256435007292AA /* Debug */,
+				FAFFE79024256435007292AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFFE79124256435007292AA /* Build configuration list for PBXNativeTarget "ContagionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFFE79224256435007292AA /* Debug */,
+				FAFFE79324256435007292AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFFE79424256435007292AA /* Build configuration list for PBXNativeTarget "ContagionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFFE79524256435007292AA /* Debug */,
+				FAFFE79624256435007292AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAFFE76824256431007292AA /* Contagion.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAFFE76924256431007292AA /* Contagion.xcdatamodel */,
+			);
+			currentVersion = FAFFE76924256431007292AA /* Contagion.xcdatamodel */;
+			path = Contagion.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FAFFE75924256431007292AA /* Project object */;
+}

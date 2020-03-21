@@ -17,11 +17,11 @@ struct HistoryElementView: View {
             ForEach(state.state.stateTexts, id: \.day) { stateText in
                 HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
             }
-            if state.state.stateTexts.last!.day < daysElapsed(gameState: gameState) {
-                ForEach(state.state.stateTexts, id: \.day) { stateText in
-                    HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
-                }
-            }
+//            if state.state.stateTexts.last!.day < daysElapsed(gameState: gameState) {
+//                ForEach(state.state.stateActions, id: \.actionOption) { stateText in
+//                    HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
+//                }
+//            }
         }
     }
 }

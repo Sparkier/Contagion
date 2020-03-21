@@ -16,6 +16,12 @@
 		FAFFE77424256435007292AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFFE77224256435007292AA /* LaunchScreen.storyboard */; };
 		FAFFE77F24256435007292AA /* ContagionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE77E24256435007292AA /* ContagionTests.swift */; };
 		FAFFE78A24256435007292AA /* ContagionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE78924256435007292AA /* ContagionUITests.swift */; };
+		FAFFE798242568D9007292AA /* PandemyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE797242568D9007292AA /* PandemyState.swift */; };
+		FAFFE79A242568FC007292AA /* PandemyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE799242568FC007292AA /* PandemyAction.swift */; };
+		FAFFE79C242569C4007292AA /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE79B242569C4007292AA /* GameState.swift */; };
+		FAFFE79E24256B3D007292AA /* ActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE79D24256B3D007292AA /* ActionResult.swift */; };
+		FAFFE7A024256CB3007292AA /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE79F24256CB3007292AA /* History.swift */; };
+		FAFFE7A2242577F1007292AA /* HistoryElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE7A1242577F1007292AA /* HistoryElementView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		FAFFE78524256435007292AA /* ContagionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContagionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFFE78924256435007292AA /* ContagionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContagionUITests.swift; sourceTree = "<group>"; };
 		FAFFE78B24256435007292AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAFFE797242568D9007292AA /* PandemyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandemyState.swift; sourceTree = "<group>"; };
+		FAFFE799242568FC007292AA /* PandemyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandemyAction.swift; sourceTree = "<group>"; };
+		FAFFE79B242569C4007292AA /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		FAFFE79D24256B3D007292AA /* ActionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResult.swift; sourceTree = "<group>"; };
+		FAFFE79F24256CB3007292AA /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		FAFFE7A1242577F1007292AA /* HistoryElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryElementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +116,17 @@
 				FAFFE76424256431007292AA /* AppDelegate.swift */,
 				FAFFE76624256431007292AA /* SceneDelegate.swift */,
 				FAFFE76B24256431007292AA /* ContentView.swift */,
+				FAFFE7A1242577F1007292AA /* HistoryElementView.swift */,
 				FAFFE76D24256435007292AA /* Assets.xcassets */,
 				FAFFE77224256435007292AA /* LaunchScreen.storyboard */,
 				FAFFE77524256435007292AA /* Info.plist */,
 				FAFFE76824256431007292AA /* Contagion.xcdatamodeld */,
 				FAFFE76F24256435007292AA /* Preview Content */,
+				FAFFE797242568D9007292AA /* PandemyState.swift */,
+				FAFFE799242568FC007292AA /* PandemyAction.swift */,
+				FAFFE79B242569C4007292AA /* GameState.swift */,
+				FAFFE79D24256B3D007292AA /* ActionResult.swift */,
+				FAFFE79F24256CB3007292AA /* History.swift */,
 			);
 			path = Contagion;
 			sourceTree = "<group>";
@@ -270,9 +288,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFFE7A024256CB3007292AA /* History.swift in Sources */,
+				FAFFE79C242569C4007292AA /* GameState.swift in Sources */,
+				FAFFE798242568D9007292AA /* PandemyState.swift in Sources */,
+				FAFFE7A2242577F1007292AA /* HistoryElementView.swift in Sources */,
+				FAFFE79E24256B3D007292AA /* ActionResult.swift in Sources */,
 				FAFFE76524256431007292AA /* AppDelegate.swift in Sources */,
 				FAFFE76724256431007292AA /* SceneDelegate.swift in Sources */,
 				FAFFE76C24256431007292AA /* ContentView.swift in Sources */,
+				FAFFE79A242568FC007292AA /* PandemyAction.swift in Sources */,
 				FAFFE76A24256431007292AA /* Contagion.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

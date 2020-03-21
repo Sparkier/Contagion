@@ -13,6 +13,7 @@ struct HistoryElementActionView: View {
     let timerHelper: TimerHelper
     let index: Int
     let historyIndex: Int
+    let historyDays: Int
     @EnvironmentObject var history: History
     @EnvironmentObject var gameState: GameState
 
@@ -22,11 +23,12 @@ struct HistoryElementActionView: View {
             self.timerHelper.startTimer(gameState: self.gameState)
             // Remove all History Elements up to the current, but keep the current.
             let removeK = self.history.states.count - self.historyIndex - 1
-            // 	self.history.states.removeLast(removeK)
+            self.history.states.removeLast(removeK)
+            self.gameState.time = Calendar.current.date(byAdding: .day, value: self.historyDays, to: self.gameState.beginTime) ?? self.gameState.time
             self.history.states[self.history.states.count - 1].selectedAction = self.index
             self.history.states.append(HistoryElement(state: self.stateAction.newState, selectedAction: nil, index: self.history.states.last!.index + 1))
         }) {
-            Text(stateAction.actionOption)
+            Text(stateAction.actionOption).frame(maxWidth: .infinity)
         }.buttonStyle(GradientButtonStyle())
     }
 }

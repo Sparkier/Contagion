@@ -20,15 +20,15 @@ struct HistoryElementView: View {
             ForEach(state.state.stateTexts, id: \.day) { stateText in
                 HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
             }
-            if state.state.stateTexts.last!.day < daysElapsed(gameState: gameState) {
-                state.state.stateActions.map { stateActions in
-                    HStack {
+            if state.state.stateTexts.last!.day <= daysElapsed(gameState: gameState) {
+                HStack {
+                    state.state.stateActions.map { stateActions in
                         ForEach(0..<stateActions.count) { i in
-                            HistoryElementActionView(stateAction: stateActions[i], timerHelper: self.timerHelper, index: i, historyIndex: self.historyIndex).environmentObject(self.gameState).environmentObject(self.history)
+                            HistoryElementActionView(stateAction: stateActions[i], timerHelper: self.timerHelper, index: i, historyIndex: self.historyIndex, historyDays: self.state.state.stateTexts.last!.day).environmentObject(self.gameState).environmentObject(self.history)
                         }
-                    }.onAppear {
-                        self.timerHelper.stopTimer()
                     }
+                }.onAppear {
+                    self.timerHelper.stopTimer()
                 }
             }
         }.padding()

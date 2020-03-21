@@ -35,8 +35,8 @@ struct ContentView: View {
                     Text("🗓 \(formatDate(date: gameState.time))")
                 }.padding().background(Color(UIColor(named: "StatsBackgroundColor")!))
                 CustomScrollView(scrollToEnd: true) {
-                    ForEach(0..<self.history.states.count) { i in
-                        HistoryElementView(state: self.history.states[i], timerHelper: self.timerHelper, historyIndex: i).environmentObject(self.gameState).environmentObject(self.history)
+                    ForEach(0..<self.history.states.count, id: \.self) { historyIndex in
+                        HistoryElementView(state: self.history.states[historyIndex], timerHelper: self.timerHelper, historyIndex: historyIndex).environmentObject(self.gameState).environmentObject(self.history)
                     }
                 }
             }

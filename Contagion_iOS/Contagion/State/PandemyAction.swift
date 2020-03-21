@@ -9,5 +9,7 @@
 import Foundation
 
 struct PandemyAction {
-    let actionText: String
+    let actionOptions: [String]
+    let newStates: [PandemyState]
+    let changeAction: (GameState) -> (GameState)
 }

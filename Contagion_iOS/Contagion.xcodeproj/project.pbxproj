@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FADA2EDA24265AC100E69272 /* HistoryElementTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA2ED924265AC100E69272 /* HistoryElementTextView.swift */; };
+		FADA2EDC2426676A00E69272 /* DaysHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA2EDB2426676A00E69272 /* DaysHelper.swift */; };
 		FAFFE76524256431007292AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76424256431007292AA /* AppDelegate.swift */; };
 		FAFFE76724256431007292AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76624256431007292AA /* SceneDelegate.swift */; };
 		FAFFE76A24256431007292AA /* Contagion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76824256431007292AA /* Contagion.xcdatamodeld */; };
@@ -19,9 +21,9 @@
 		FAFFE798242568D9007292AA /* PandemyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE797242568D9007292AA /* PandemyState.swift */; };
 		FAFFE79A242568FC007292AA /* PandemyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE799242568FC007292AA /* PandemyAction.swift */; };
 		FAFFE79C242569C4007292AA /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE79B242569C4007292AA /* GameState.swift */; };
-		FAFFE79E24256B3D007292AA /* ActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE79D24256B3D007292AA /* ActionResult.swift */; };
 		FAFFE7A024256CB3007292AA /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE79F24256CB3007292AA /* History.swift */; };
 		FAFFE7A2242577F1007292AA /* HistoryElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE7A1242577F1007292AA /* HistoryElementView.swift */; };
+		FAFFE7A8242615E6007292AA /* NumberFormattingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE7A7242615E6007292AA /* NumberFormattingHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FADA2ED924265AC100E69272 /* HistoryElementTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryElementTextView.swift; sourceTree = "<group>"; };
+		FADA2EDB2426676A00E69272 /* DaysHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysHelper.swift; sourceTree = "<group>"; };
 		FAFFE76124256431007292AA /* Contagion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contagion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFFE76424256431007292AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAFFE76624256431007292AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +64,9 @@
 		FAFFE797242568D9007292AA /* PandemyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandemyState.swift; sourceTree = "<group>"; };
 		FAFFE799242568FC007292AA /* PandemyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandemyAction.swift; sourceTree = "<group>"; };
 		FAFFE79B242569C4007292AA /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		FAFFE79D24256B3D007292AA /* ActionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResult.swift; sourceTree = "<group>"; };
 		FAFFE79F24256CB3007292AA /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		FAFFE7A1242577F1007292AA /* HistoryElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryElementView.swift; sourceTree = "<group>"; };
+		FAFFE7A7242615E6007292AA /* NumberFormattingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormattingHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,20 +117,16 @@
 		FAFFE76324256431007292AA /* Contagion */ = {
 			isa = PBXGroup;
 			children = (
+				FAFFE7A6242615C5007292AA /* State */,
+				FAFFE7A4242615AD007292AA /* Views */,
+				FAFFE7A3242615A2007292AA /* Helpers */,
 				FAFFE76424256431007292AA /* AppDelegate.swift */,
 				FAFFE76624256431007292AA /* SceneDelegate.swift */,
-				FAFFE76B24256431007292AA /* ContentView.swift */,
-				FAFFE7A1242577F1007292AA /* HistoryElementView.swift */,
 				FAFFE76D24256435007292AA /* Assets.xcassets */,
 				FAFFE77224256435007292AA /* LaunchScreen.storyboard */,
 				FAFFE77524256435007292AA /* Info.plist */,
 				FAFFE76824256431007292AA /* Contagion.xcdatamodeld */,
 				FAFFE76F24256435007292AA /* Preview Content */,
-				FAFFE797242568D9007292AA /* PandemyState.swift */,
-				FAFFE799242568FC007292AA /* PandemyAction.swift */,
-				FAFFE79B242569C4007292AA /* GameState.swift */,
-				FAFFE79D24256B3D007292AA /* ActionResult.swift */,
-				FAFFE79F24256CB3007292AA /* History.swift */,
 			);
 			path = Contagion;
 			sourceTree = "<group>";
@@ -155,6 +155,36 @@
 				FAFFE78B24256435007292AA /* Info.plist */,
 			);
 			path = ContagionUITests;
+			sourceTree = "<group>";
+		};
+		FAFFE7A3242615A2007292AA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE7A7242615E6007292AA /* NumberFormattingHelper.swift */,
+				FADA2EDB2426676A00E69272 /* DaysHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FAFFE7A4242615AD007292AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE76B24256431007292AA /* ContentView.swift */,
+				FAFFE7A1242577F1007292AA /* HistoryElementView.swift */,
+				FADA2ED924265AC100E69272 /* HistoryElementTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAFFE7A6242615C5007292AA /* State */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFE79B242569C4007292AA /* GameState.swift */,
+				FAFFE79F24256CB3007292AA /* History.swift */,
+				FAFFE797242568D9007292AA /* PandemyState.swift */,
+				FAFFE799242568FC007292AA /* PandemyAction.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,16 +318,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADA2EDC2426676A00E69272 /* DaysHelper.swift in Sources */,
+				FAFFE7A8242615E6007292AA /* NumberFormattingHelper.swift in Sources */,
 				FAFFE7A024256CB3007292AA /* History.swift in Sources */,
 				FAFFE79C242569C4007292AA /* GameState.swift in Sources */,
 				FAFFE798242568D9007292AA /* PandemyState.swift in Sources */,
 				FAFFE7A2242577F1007292AA /* HistoryElementView.swift in Sources */,
-				FAFFE79E24256B3D007292AA /* ActionResult.swift in Sources */,
 				FAFFE76524256431007292AA /* AppDelegate.swift in Sources */,
 				FAFFE76724256431007292AA /* SceneDelegate.swift in Sources */,
 				FAFFE76C24256431007292AA /* ContentView.swift in Sources */,
 				FAFFE79A242568FC007292AA /* PandemyAction.swift in Sources */,
 				FAFFE76A24256431007292AA /* Contagion.xcdatamodeld in Sources */,
+				FADA2EDA24265AC100E69272 /* HistoryElementTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

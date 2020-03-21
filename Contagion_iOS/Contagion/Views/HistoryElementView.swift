@@ -10,6 +10,8 @@ import SwiftUI
 
 struct HistoryElementView: View {
     let state: HistoryElement
+    let timerHelper: TimerHelper
+    @EnvironmentObject var history: History
     @EnvironmentObject var gameState: GameState
 
     var body: some View {
@@ -17,11 +19,17 @@ struct HistoryElementView: View {
             ForEach(state.state.stateTexts, id: \.day) { stateText in
                 HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
             }
-//            if state.state.stateTexts.last!.day < daysElapsed(gameState: gameState) {
-//                ForEach(state.state.stateActions, id: \.actionOption) { stateText in
-//                    HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
-//                }
-//            }
+            if state.state.stateTexts.last!.day < daysElapsed(gameState: gameState) {
+                state.state.stateActions.map { stateActions in
+                    HStack {
+                        ForEach(0..<stateActions.count) { i in
+                            HistoryElementActionView(stateAction: stateActions[i], timerHelper: self.timerHelper, index: i).environmentObject(self.gameState).environmentObject(self.history)
+                        }
+                    }.onAppear {
+                        self.timerHelper.stopTimer()
+                    }
+                }
+            }
         }
     }
 }

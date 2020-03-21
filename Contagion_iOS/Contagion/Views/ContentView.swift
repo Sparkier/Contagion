@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var history: History
     @ObservedObject var gameState: GameState
+    let timerHelper: TimerHelper
 
     var body: some View {
         VStack {
@@ -28,7 +29,7 @@ struct ContentView: View {
             List {
                 ForEach(history.states, id: \.index) {
                     state in
-                    HistoryElementView(state: state).environmentObject(self.gameState)
+                    HistoryElementView(state: state, timerHelper: self.timerHelper).environmentObject(self.gameState).environmentObject(self.history)
                 }
             }
         }
@@ -37,6 +38,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(history: History(), gameState: GameState())
+        let timerHelper = TimerHelper()
+        let gameState = GameState()
+        timerHelper.startTimer(gameState: gameState)
+        return ContentView(history: History(), gameState: gameState, timerHelper: timerHelper)
     }
 }

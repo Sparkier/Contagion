@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var history: History?
     var gameState: GameState?
-    var timer: Timer?
+    var timerHelper: TimerHelper = TimerHelper()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let contentView = ContentView(history: history!, gameState: gameState!).environment(\.managedObjectContext, context)
+        let contentView = ContentView(history: history!, gameState: gameState!, timerHelper: timerHelper).environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -38,8 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
-
-        startTimer()
+        timerHelper.startTimer(gameState: gameState!)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -71,23 +70,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-    }
-
-    func startTimer() {
-        guard timer == nil else { return }
-        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { timer in
-            self.gameState!.time = Calendar.current.date(byAdding: .day, value: 1, to: self.gameState!.time) ?? self.gameState!.time
-            self.checkActionForDay()
-        })
-    }
-
-    func stopTimer() {
-        timer?.invalidate()
-        timer = nil
-    }
-
-    func checkActionForDay() {
-        // TODO: Check if something needs to be done for that day.
     }
 }
 

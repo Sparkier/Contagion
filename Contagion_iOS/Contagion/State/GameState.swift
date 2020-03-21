@@ -22,6 +22,10 @@ class GameState: ObservableObject {
         self.money = 0
         self.mood = 80.0
     }
+
+    func changeState(changeFunction: (GameState) -> ()) {
+        changeFunction(self)
+    }
 }
 
 struct Population {

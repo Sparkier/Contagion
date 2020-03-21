@@ -18,7 +18,7 @@ class History: ObservableObject {
 
 struct HistoryElement {
     let state: PandemyState
-    let selectedAction: Int?
+    var selectedAction: Int?
     let index: Int
 }
 

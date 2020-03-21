@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FADA2EDA24265AC100E69272 /* HistoryElementTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA2ED924265AC100E69272 /* HistoryElementTextView.swift */; };
 		FADA2EDC2426676A00E69272 /* DaysHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA2EDB2426676A00E69272 /* DaysHelper.swift */; };
+		FADA2EDE24266BAC00E69272 /* HistoryElementActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA2EDD24266BAC00E69272 /* HistoryElementActionView.swift */; };
+		FADA2EE024267CB100E69272 /* TimerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA2EDF24267CB100E69272 /* TimerHelper.swift */; };
 		FAFFE76524256431007292AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76424256431007292AA /* AppDelegate.swift */; };
 		FAFFE76724256431007292AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76624256431007292AA /* SceneDelegate.swift */; };
 		FAFFE76A24256431007292AA /* Contagion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAFFE76824256431007292AA /* Contagion.xcdatamodeld */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		FADA2ED924265AC100E69272 /* HistoryElementTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryElementTextView.swift; sourceTree = "<group>"; };
 		FADA2EDB2426676A00E69272 /* DaysHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysHelper.swift; sourceTree = "<group>"; };
+		FADA2EDD24266BAC00E69272 /* HistoryElementActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryElementActionView.swift; sourceTree = "<group>"; };
+		FADA2EDF24267CB100E69272 /* TimerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
 		FAFFE76124256431007292AA /* Contagion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contagion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFFE76424256431007292AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAFFE76624256431007292AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			children = (
 				FAFFE7A7242615E6007292AA /* NumberFormattingHelper.swift */,
 				FADA2EDB2426676A00E69272 /* DaysHelper.swift */,
+				FADA2EDF24267CB100E69272 /* TimerHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				FAFFE76B24256431007292AA /* ContentView.swift */,
 				FAFFE7A1242577F1007292AA /* HistoryElementView.swift */,
 				FADA2ED924265AC100E69272 /* HistoryElementTextView.swift */,
+				FADA2EDD24266BAC00E69272 /* HistoryElementActionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADA2EDE24266BAC00E69272 /* HistoryElementActionView.swift in Sources */,
 				FADA2EDC2426676A00E69272 /* DaysHelper.swift in Sources */,
 				FAFFE7A8242615E6007292AA /* NumberFormattingHelper.swift in Sources */,
 				FAFFE7A024256CB3007292AA /* History.swift in Sources */,
@@ -326,6 +333,7 @@
 				FAFFE7A2242577F1007292AA /* HistoryElementView.swift in Sources */,
 				FAFFE76524256431007292AA /* AppDelegate.swift in Sources */,
 				FAFFE76724256431007292AA /* SceneDelegate.swift in Sources */,
+				FADA2EE024267CB100E69272 /* TimerHelper.swift in Sources */,
 				FAFFE76C24256431007292AA /* ContentView.swift in Sources */,
 				FAFFE79A242568FC007292AA /* PandemyAction.swift in Sources */,
 				FAFFE76A24256431007292AA /* Contagion.xcdatamodeld in Sources */,

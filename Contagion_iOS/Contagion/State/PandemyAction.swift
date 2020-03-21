@@ -11,5 +11,5 @@ import Foundation
 struct PandemyAction {
     let actionOption: String
     let newState: PandemyState
-    let changeAction: (GameState) -> (GameState)
+    let changeAction: (GameState) -> ()
 }

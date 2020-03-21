@@ -23,6 +23,16 @@ struct HistoryElementActionView: View {
             self.history.states.append(HistoryElement(state: self.stateAction.newState, selectedAction: nil, index: self.history.states.last!.index + 1))
         }) {
             Text(stateAction.actionOption)
-        }
+        }.buttonStyle(GradientButtonStyle())
+    }
+}
+
+struct GradientButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(Color.white)
+            .padding()
+            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(15.0)
     }
 }

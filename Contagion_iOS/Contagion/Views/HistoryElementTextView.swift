@@ -14,10 +14,10 @@ struct HistoryElementTextView: View {
 
     var body: some View {
         if daysElapsed(gameState: gameState) >= stateText.day {
-            return AnyView(VStack {
-                Text(stateText.author)
+            return AnyView(VStack(alignment: .leading) {
+                Text(stateText.author).bold()
                 Text(stateText.text)
-            })
+            }.fixedSize(horizontal: false, vertical: true).background(Color.clear))
         } else {
             return AnyView(EmptyView())
         }

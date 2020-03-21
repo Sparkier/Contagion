@@ -14,22 +14,30 @@ struct ContentView: View {
     let timerHelper: TimerHelper
 
     var body: some View {
-        VStack {
-            HStack {
-                VStack {
-                    Text("😊 \(formatPeopleNumber(number: gameState.population.healthy))")
-                    Text("🦠 \(formatPeopleNumber(number: gameState.population.infected))")
-                    Text("💚 \(formatPeopleNumber(number: gameState.population.healed))")
-                    Text("💀 \(formatPeopleNumber(number: gameState.population.dead))")
-                }
-                Text("💵 \(gameState.money) €")
-                Text(formatMood(mood: gameState.mood))
-                Text("🗓 \(formatDate(date: gameState.time))")
-            }
-            CustomScrollView(scrollToEnd: true) {
-                ForEach(self.history.states, id: \.index) {
-                    state in
-                    HistoryElementView(state: state, timerHelper: self.timerHelper).environmentObject(self.gameState).environmentObject(self.history)
+        ZStack {
+            Color(UIColor(named: "StatsBackgroundColor")!)
+                .edgesIgnoringSafeArea(.top)
+            Color(UIColor(named: "MainBackgroundColor")!)
+                .edgesIgnoringSafeArea(.bottom)
+            VStack {
+                HStack {
+                    VStack {
+                        Text("😊 \(formatPeopleNumber(number: gameState.population.healthy))")
+                        Text("🦠 \(formatPeopleNumber(number: gameState.population.infected))")
+                        Text("💚 \(formatPeopleNumber(number: gameState.population.healed))")
+                        Text("💀 \(formatPeopleNumber(number: gameState.population.dead))")
+                    }
+                    Spacer()
+                    Text("💵 \(gameState.money) €")
+                    Spacer()
+                    Text(formatMood(mood: gameState.mood))
+                    Spacer()
+                    Text("🗓 \(formatDate(date: gameState.time))")
+                }.padding().background(Color(UIColor(named: "StatsBackgroundColor")!))
+                CustomScrollView(scrollToEnd: true) {
+                    ForEach(0..<self.history.states.count) { i in
+                        HistoryElementView(state: self.history.states[i], timerHelper: self.timerHelper, historyIndex: i).environmentObject(self.gameState).environmentObject(self.history)
+                    }
                 }
             }
         }
@@ -77,7 +85,6 @@ struct CustomScrollView<Content>: View where Content: View {
         .frame(height: geometry.size.height, alignment: (reversed ? .bottom : .top))
         .offset(y: contentOffset + scrollOffset)
         .animation(.easeInOut)
-        .background(Color.white)
         .gesture(DragGesture()
         .onChanged { self.onDragChanged($0) }
         .onEnded { self.onDragEnded($0, outerHeight: geometry.size.height) }

@@ -12,6 +12,7 @@ struct HistoryElementActionView: View {
     let stateAction: PandemyAction
     let timerHelper: TimerHelper
     let index: Int
+    let historyIndex: Int
     @EnvironmentObject var history: History
     @EnvironmentObject var gameState: GameState
 
@@ -19,6 +20,9 @@ struct HistoryElementActionView: View {
         Button(action: {
             self.gameState.changeState(changeFunction: self.stateAction.changeAction)
             self.timerHelper.startTimer(gameState: self.gameState)
+            // Remove all History Elements up to the current, but keep the current.
+            let removeK = self.history.states.count - self.historyIndex - 1
+            // 	self.history.states.removeLast(removeK)
             self.history.states[self.history.states.count - 1].selectedAction = self.index
             self.history.states.append(HistoryElement(state: self.stateAction.newState, selectedAction: nil, index: self.history.states.last!.index + 1))
         }) {
@@ -32,7 +36,7 @@ struct GradientButtonStyle: ButtonStyle {
         configuration.label
             .foregroundColor(Color.white)
             .padding()
-            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+            .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor(named: "ButtonColor1")!), Color(UIColor(named: "ButtonColor2")!)]), startPoint: .leading, endPoint: .trailing))
             .cornerRadius(15.0)
     }
 }

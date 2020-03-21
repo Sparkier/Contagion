@@ -1,0 +1,2 @@
+rootProject.name='Contagion_android'
+include ':app'

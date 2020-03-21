@@ -32,7 +32,10 @@ struct ContentView: View {
                     Spacer()
                     Text(formatMood(mood: gameState.mood))
                     Spacer()
-                    Text("🗓 \(formatDate(date: gameState.time))")
+                    VStack {
+                        Text("🗓 \(formatDate(date: gameState.time))")
+                        Text("🌞 Tag \(daysElapsed(gameState: gameState))")
+                    }
                 }.padding().background(Color(UIColor(named: "StatsBackgroundColor")!))
                 CustomScrollView(scrollToEnd: true) {
                     ForEach(0..<self.history.states.count, id: \.self) { historyIndex in

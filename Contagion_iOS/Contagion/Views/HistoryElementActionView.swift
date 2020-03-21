@@ -28,7 +28,7 @@ struct HistoryElementActionView: View {
             self.history.states[self.history.states.count - 1].selectedAction = self.index
             self.history.states.append(HistoryElement(state: self.stateAction.newState, selectedAction: nil, index: self.history.states.last!.index + 1))
         }) {
-            Text(stateAction.actionOption)
+            Text(stateAction.actionOption).frame(maxWidth: .infinity)
         }.buttonStyle(GradientButtonStyle())
     }
 }

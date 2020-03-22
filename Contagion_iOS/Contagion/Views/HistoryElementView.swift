@@ -16,7 +16,7 @@ struct HistoryElementView: View {
     @EnvironmentObject var gameState: GameState
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 20) {
             ForEach(state.state.stateTexts, id: \.day) { stateText in
                 HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
             }

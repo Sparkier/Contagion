@@ -13,7 +13,7 @@ class TimerHelper {
 
     func startTimer(gameState: GameState) {
         guard timer == nil else { return }
-        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
             gameState.time = Calendar.current.date(byAdding: .day, value: 1, to: gameState.time) ?? gameState.time
         })
     }

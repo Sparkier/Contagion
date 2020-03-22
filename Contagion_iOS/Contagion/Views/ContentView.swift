@@ -19,7 +19,7 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.top)
             Color(UIColor(named: "MainBackgroundColor")!)
                 .edgesIgnoringSafeArea(.bottom)
-            VStack {
+            VStack(spacing: 0) {
                 HStack {
                     VStack {
                         Text("😊 \(formatPeopleNumber(number: gameState.population.healthy))")
@@ -100,7 +100,6 @@ struct CustomScrollView<Content>: View where Content: View {
 
     private func onDragEnded(_ value: DragGesture.Value, outerHeight: CGFloat) {
         let scrollOffset = value.predictedEndLocation.y - value.startLocation.y
-
         self.updateOffset(with: scrollOffset, outerHeight: outerHeight)
         self.scrollOffset = 0
     }

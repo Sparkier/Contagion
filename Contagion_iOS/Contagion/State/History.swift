@@ -23,17 +23,43 @@ struct HistoryElement {
 }
 
 func initGameTree() -> PandemyState {
-    let state28112111112 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    let state281121111121112211 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    
+    let state28112111112111222 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    
+    let state28112111112111221 = PandemyState(texts: [StateText(day: 256, author: "Berater:", text: "Herzlichen Glückwunsch! Sie haben die Gesunheitskrise sehr gut Überstanden!"), StateText(day: 266, author: "Gesunheitsminister:", text: "Wenn Sie denken, dass das Land bereit ist würde ich die Maßnahmen langsam wieder lockern.")], actions: [PandemyAction(actionOption: "Maßnahmen lockern", newState: state281121111121112211, changeAction: changeAction281121111121112211)])
+    
+    let state2811211111211122 = PandemyState(texts: [StateText(day: 224, author: "Berater:", text: "Die Test können schneller als erwartet an andere Länder weitergegen werden, da es kaum noch Neuinfektionen gibt."), StateText(day: 227, author: "Task Force:", text: "Wir gehen davon aus, dass das die Maßnahmen im Moment alle so gerechtfertigt sind, jedoch sprechen die Zaheln für sich und wir glauben, dass die Maßnahmen in 2 Wochen wieder langsam gelockert werden können."), StateText(day: 232, author: "Gesundheitsminister:", text: "Die Zahlen der derzeit infizierten Personen gehen immer weiter runter. Dir Krankenhäuser melden bereits wieder freie Kaoazitäten."), StateText(day: 235, author: "Berater.", text: "Da die derzeitige Lage gut für das Land aussieht würde ich vorschlagen, dass die Task Force anderen Ländern zur Hilfe kommen kann, welche noch stärker mit dem Virus zu kämpfen haben. Sehen Sie das auch so?")], actions: [PandemyAction(actionOption: "Task Force schicken", newState: state28112111112111221, changeAction: changeAction28112111112111221), PandemyAction(actionOption: "Task Force behalten", newState: state28112111112111222, changeAction: changeAction28112111112111222)])
+    
+    let state2811211111211121 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    
+    let state281121111121112 = PandemyState(texts: [StateText(day: 212, author: "Berater:", text: "Die Empfehlung sich nicht in größeren Grupppen zu versammeln ist in der Bevölkerung gut angekommen. Das Vertrauen ist gestiegen und bis jetzt wird die Empfehlung auch meist umgesetzt."), StateText(day: 218, author: "Task Force:", text: "Aufgrund der Maßnahmen und des einfachen Testverfahrens gehen wir davon aus, dass die Kurve der Neuerkrankungen langsam abflacht. Um weitere Erkankungen aus dem Ausland zu vermeiden würde wir Ihnen nahe legen, dass Sie das neue Testvrfahren den Nachbarländern zur Unterstützunf zukommen lassen."), StateText(day: 220, author: "Berater.", text: "Im moment werden die Materielien für das neuartige Testverfahren in hochturen Produziert. Derzeit ist die Nachfrage auch noch höher als das Angebot. Aus diesem Grund würde ich vorschalgen, dass erst in den kommenden Tagen die Nachbarländer beliefert werden. Was halten Sie davon?")], actions: [PandemyAction(actionOption: "Jetzt beliefern", newState: state2811211111211121, changeAction: changeAction2811211111211121), PandemyAction(actionOption: "Später beliefern", newState: state2811211111211122, changeAction: changeAction2811211111211122)])
+    
+    let state281121111121111 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    
+    let state28112111112112 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    
+    let state28112111112111 = PandemyState(texts: [StateText(day: 202, author: "Berater:", text: "Da viele andere Staaten viel zu spät konkretten Maßnahmen umgesetzt haben und somit viele Menschen nicht mehr zum Arbeiten gehen können bricht die Wirschaft immer stärker ein. Die meisten Zulieferer unserer Unternehmen aus dem Ausland sind bereits abgebrochen."), StateText(day: 204, author: "Berater:", text: "Viele Unternehmen schließen ganz bzw. ordnen Home office für Ihre Mitarbeiter an. Dies könnte bei dem Kampf gegen den Virus helfen."), StateText(day: 207, author: "Task Force:", text: "Das finanziell unterstzütze Unternehmen hat es geschaft das neue Test-Verfahren einsatzbereit zu machen. Jetzt können doppelt so viele Brüger getestet werden. Die Infizierten Personen können anschließend unter Quarantäne gesetzt werden, um die Ausbreitung zu einem Ende zu führen."), StateText(day: 209, author: "Gesundheitsminister:", text: "Leider haben wir jetzt auch den ersten Todesfall aufgrund des Covid-19 Viruses zu beklagen. Wir sollten ggf. weitere Maßnahmen ergreifen. Es sollte verboten werden, dass sich mehr als 5 Personen treffen, um dem Vrius gar nicht erst die Chance zu geben, dass er sich ausbreitet."), StateText(day: 211, author: "Berater:", text: "Ich denke eine Versammlungsverbot wäre der Falsche weg, da es sein kann, dass sich die Bevlökerung nicht daran hält. Ich würde Vorschalgen, dass eine Empfehlung ausgesprochen wird.")], actions: [PandemyAction(actionOption: "Ausgangsverbot", newState: state281121111121111, changeAction: changeAction281121111121111), PandemyAction(actionOption: "Empfehlung", newState: state281121111121112, changeAction: changeAction281121111121112)])
+    
+    let state2811211111212 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    
+    let state2811211111211 = PandemyState(texts: [StateText(day: 198, author: "Berater", text: "Die Bevölkerung versteht nicht ganz, warum Schulen und Kindergärten geschlossen werden soll, jedoch die Grenzen offen bleiben. Zusätzlich haben viele Eltern probelme zur Arbeit zu gehen, da die Kinder jetzt selbst betreut werden müssen. Dies hat das viel Vertrauen der Brüger gekostet und nicht alle Maßnahmen werden so konsequent umgesetzt wie erwaret und erhofft."), StateText(day: 200, author: "Berater:", text: "Der öffentliche Druch wird sehr hoch und die meisten anderen Staaten haben die Grenzen ebenfalls schon geschloßen. Sollen die Grenzen dennoch offen bleiben?")], actions: [PandemyAction(actionOption: "Grenzen schließen", newState: state28112111112111, changeAction: changeAction28112111112111), PandemyAction(actionOption: "Offene Grenzen", newState: state28112111112112, changeAction: changeAction28112111112112)])
+    
+    let state281121111122 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
+    
+    let state281121111121 = PandemyState(texts: [StateText(day: 189, author: "Berater.", text: "Dem Unternehmen wird die geforderte Summe bereitgestellt. Es wird damit gerechnet, dass in eingen Wochen das Test-Verfahren bereit ist."), StateText(day: 191, author: "Gesundheitsminister:", text: "Wie vor einigen Tagen bereits angesprochen sollten wir die Kapazitäten in der Vorsorung erhöhren."), StateText(day: 192, author: "Berater;", text: "Ich habe dem gsundheitminister darum gebeten einige Vorschläge zur Kapazitätserhöhung zu machen. er wird in den kommenden Tagen mit konkreten Vorschlägen auf Sie zukommen."), StateText(day: 194, author: "Task Force:", text: "Die erste Person im Inland wurde von Covid-19 geheilt."),StateText(day: 196, author: "Berater:", text: "Einige Nachbarstaaten haben Schließungen von Hochschulen, Schulen und Kindergärten eingeführt. Wollen Sie alle ebenfalls eine solche Maßnahme ergreifen?")], actions: [PandemyAction(actionOption: "Schulschließung", newState: state2811211111211, changeAction: changeAction2811211111211), PandemyAction(actionOption: "Offene Schulen", newState: state2811211111212, changeAction: changeAction2811211111212)])
+    
+    let state28112111112 = PandemyState(texts: [StateText(day: 181, author: "Berater:", text: "Das offen lassen der Grenzen ist zwar bei einigen Bürgern gut angekommen, jedoch vermuten viele Wissenschaftler, dass dies zur weiteren Ausbreitung von Covid-19 beiträgt."), StateText(day: 184, author: "Gesundheitsminister:", text: "In einigen anderen Ländern gibt es ein Kapazitätsengpass in den Krankenhäusern und Atenmasken. Es sollte darüber nachrgedacht werden bereits jetzt Maßnahmen zu treffen, um das medizinische Personal und den Bestand an Hygiene-Artikel aufzustocken."),StateText(day: 187, author: "Task Force:", text: "Ein im Inland ansäiges Unternehmen steht vermutlich kurz vor der Entdeckung eiens besseren Testverfahrens, welches den Test-Prozess halbieren würde. Somit könnte man doppelt so viele Leute testen wie aktuell."), StateText(day: 188, author: "Berater:", text: "Das Unternehmen bräuchte zur Weiterentwicklung finanzielle Unterstützung von rund 19 M. Euro soll eine solche Summe an das Unternehmen gegeben werden?")], actions: [PandemyAction(actionOption: "Unterstzützen", newState: state281121111121, changeAction: changeAction281121111121), PandemyAction(actionOption: "Nicht unterstzützen", newState: state281121111122, changeAction: changeAction281121111122)])
     
     let state28112111111 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
     
     let state2811211112 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
     
-    let state2811211111 = PandemyState(texts: [StateText(day: 178, author: "Gesundheitsminister:", text: "Die Infiziertenzahlen im In- und Ausland steigen stark. Als tragische Neuigkeiten steigen die Zahlen der Toten in den schon Länger infizierten Ländern ebenalls rasant."), StateText(day: 179, author: "Berater:", text: "Experten zufolge hat sich die Pressekonferenz gut auf die aktuelle Situation ausgewirkt, da viele die Maßnahmen ersnt nehmen steigt die Infiziertenzahl langsamer als in anderen Ländern."), StateText(day: 180, author: "Berater:", text: "Um die dennoch steigenden Zahlen einzuschränken sollten wir den nächsten Schriff überlegen. Hierzu kam der Vorschlag, dass die Grenzen zu allen aderen Nachbarstaaten ebenfalls teilgesperrt werden sollen. Wollen Sie das umsetzen oder denken Sie, dass diese Maßnahme den Rahmen sprengen würde?")], actions: [PandemyAction(actionOption: "Weitere Teilsperrungen", newState: state28112111111, changeAction: changeAction28112111111), PandemyAction(actionOption: "Abwarten", newState: state28112111112, changeAction: changeAction28112111112)])
+    let state2811211111 = PandemyState(texts: [StateText(day: 178, author: "Gesundheitsminister:", text: "Die Infiziertenzahlen im In- und Ausland steigen stark. Als tragische Neuigkeiten steigen die Zahlen der Toten in den schon Länger infizierten Ländern ebenalls rasant."), StateText(day: 179, author: "Berater:", text: "Experten zufolge hat sich die Pressekonferenz gut auf die aktuelle Situation ausgewirkt, da viele die Maßnahmen ersnt nehmen steigt die Infiziertenzahl langsamer als in anderen Ländern."), StateText(day: 180, author: "Berater:", text: "Um die dennoch steigenden Zahlen einzuschränken sollten wir den nächsten Schriff überlegen. Hierzu kam der Vorschlag, dass die Grenzen zu allen aderen Nachbarstaaten ebenfalls teilgesperrt werden sollen. Wollen Sie das umsetzen oder denken Sie, dass diese Maßnahme den Finaziellen- und Gedunlds-Rahmen sprengen würde?")], actions: [PandemyAction(actionOption: "Weitere Teilsperrungen", newState: state28112111111, changeAction: changeAction28112111111), PandemyAction(actionOption: "Abwarten", newState: state28112111112, changeAction: changeAction28112111112)])
     
     let state281121112 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
     
-    let state281121111 = PandemyState(texts: [StateText(day: 173, author: "Berater:", text: "Die Teilsperrung ab dem heutigen Tage wird an der einen Grenze druchgeführt. Einige personen halten diesen Schriff für völlig überzogen."), StateText(day: 174, author: "Gesundheitsminister:", text: "Die Teilsperrung wird uns bestimmt sehr hilfreich sein. Ich vermute wir haben den Virus bereits im Griff. Herzlichen Glückwunsch Sie haben die Lage sehr gut eingeschätzt!"), StateText(day: 175, author: "Task Force:", text: "Aufgrund der Daten aus den anderen Ländern können wir den Virus besser und besser einschätzen. Hier ein paar neue Erkenntnisse: 1. Der Virus ist speziell für ältere Menschen und Menschen mit Vorerkankung sehr gefährlich. Im Umkehrschluss besteht die Geafhr bei jungen Menschen eher weniger. 2. Der Virus verbreiter sich sehr schnell und manche Personen bekommen keine Symprome, aber können den Virus dennoch übertagen."), StateText(day: 176, author: "Task Force:", text: "Wir denken man sollte der Bevölkerung klarmachen, welche Möglichkeiten es gibt, um die Verbretiung von Covd-19 einzuschränken. Wichtige Maßnahmen sind hierbei das häufige Händewaschen und das Husten in die Ellenbogen."), StateText(day: 177, author: "Berater:", text: "Soll ich eine Presseerklärung mit diesen Maßnachmen und der Bitte zur Einhaltung veröffentlichen?")], actions: [PandemyAction(actionOption: "Presseerklärung", newState: state2811211111, changeAction: changeAction2811211111), PandemyAction(actionOption: "Keine Presseerklärung", newState: state2811211112, changeAction: changeAction2811211112)])
+    let state281121111 = PandemyState(texts: [StateText(day: 173, author: "Berater:", text: "Die Teilsperrung ab dem heutigen Tage wird an der einen Grenze druchgeführt. Einige personen halten diesen Schriff für völlig überzogen."), StateText(day: 174, author: "Gesundheitsminister:", text: "Die Teilsperrung wird uns bestimmt sehr hilfreich sein. Ich vermute wir haben den Virus bereits im Griff. Herzlichen Glückwunsch Sie haben die Lage sehr gut eingeschätzt!"), StateText(day: 175, author: "Task Force:", text: "Aufgrund der Daten aus den anderen Ländern können wir den Virus besser und besser einschätzen. Hier ein paar neue Erkenntnisse: 1. Der Virus ist speziell für ältere Menschen und Menschen mit Vorerkankung sehr gefährlich. Im Umkehrschluss besteht die Geafhr bei jungen Menschen eher weniger. 2. Der Virus verbreiter sich sehr schnell und manche Personen bekommen keine Symprome, aber können den Virus dennoch übertagen. 3. Das Testverfahren auf den Virus dauert sehr lange und kann nur mit einer begrenzten Anzahl an Personen durchgeführt werden."), StateText(day: 176, author: "Task Force:", text: "Wir denken man sollte der Bevölkerung klarmachen, welche Möglichkeiten es gibt, um die Verbretiung von Covd-19 einzuschränken. Wichtige Maßnahmen sind hierbei das häufige, mindestens 30-Sekunden-lange Händewaschen und das Husten in die Ellenbogen."), StateText(day: 177, author: "Berater:", text: "Soll ich eine Presseerklärung mit diesen Maßnachmen und der Bitte zur Einhaltung veröffentlichen?")], actions: [PandemyAction(actionOption: "Presseerklärung", newState: state2811211111, changeAction: changeAction2811211111), PandemyAction(actionOption: "Keine Presseerklärung", newState: state2811211112, changeAction: changeAction2811211112)])
     
     let state28112112 = PandemyState(texts: [StateText(day: 100, author: "", text: "")], actions: nil)
     
@@ -249,16 +275,131 @@ func changeAction2811211112(_ gameState: GameState) {
 }
 
 func changeAction28112111111(_ gameState: GameState) {
+    //tbd
     gameState.mood = 69.5
-    gameState.money = -29127700
+    gameState.money = -34127700
     gameState.population.infected = 122
     gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
 }
 
 func changeAction28112111112(_ gameState: GameState) {
-    //tbd
     gameState.mood = 73.9
     gameState.money = -29127700
     gameState.population.infected = 197
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction281121111121(_ gameState: GameState) {
+    gameState.mood = 74.9
+    gameState.money = -48191700
+    gameState.population.infected = 487
+    gameState.population.healed = 1
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction281121111122(_ gameState: GameState) {
+    //tbd
+    gameState.mood = 72.9
+    gameState.money = -29127700
+    gameState.population.infected = 487
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction2811211111211(_ gameState: GameState) {
+    gameState.mood = 63.9
+    gameState.money = -69247700
+    gameState.population.healed = 3
+    gameState.population.infected = 4571
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction2811211111212(_ gameState: GameState) {
+    gameState.mood = 71.5
+    gameState.money = -69247700
+    gameState.population.healed = 3
+    gameState.population.infected = 5700
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction28112111112111(_ gameState: GameState) {
+    gameState.mood = 64.9
+    gameState.money = -77271700
+    gameState.population.infected = 6671
+    gameState.population.healed = 7
+    gameState.population.dead = 2
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction28112111112112(_ gameState: GameState) {
+    gameState.mood = 61.9
+    gameState.money = -72271700
+    gameState.population.infected = 7571
+    gameState.population.healed = 9
+    gameState.population.dead = 2
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction281121111121111(_ gameState: GameState) {
+    //tbd
+    gameState.mood = 51.9
+    gameState.money = -167271700
+    gameState.population.infected = 6671
+    gameState.population.healed = 152
+    gameState.population.dead = 21
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction281121111121112(_ gameState: GameState) {
+    gameState.mood = 66.9
+    gameState.money = -149343700
+    gameState.population.infected = 19671
+    gameState.population.healed = 125
+    gameState.population.dead = 21
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction2811211111211121(_ gameState: GameState) {
+    gameState.mood = 67.3
+    gameState.money = -229453700
+    gameState.population.infected = 42671
+    gameState.population.healed = 937
+    gameState.population.dead = 45
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction2811211111211122(_ gameState: GameState) {
+    gameState.mood = 67.3
+    gameState.money = -229453700
+    gameState.population.infected = 42671
+    gameState.population.healed = 937
+    gameState.population.dead = 46
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction28112111112111221(_ gameState: GameState) {
+    gameState.mood = 72.3
+    gameState.money = -349946700
+    gameState.population.infected = 31258
+    gameState.population.healed = 4237
+    gameState.population.dead = 646
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction28112111112111222(_ gameState: GameState) {
+    // tbd
+    gameState.mood = 70.8
+    gameState.money = -349946700
+    gameState.population.infected = 31258
+    gameState.population.healed = 4237
+    gameState.population.dead = 646
+    gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
+}
+
+func changeAction281121111121112211(_ gameState: GameState) {
+    gameState.mood = 72.3
+    gameState.money = -467845700
+    gameState.population.infected = 0
+    gameState.population.healed = 48947
+    gameState.population.dead = 3972
     gameState.population.healthy = 82000000 - gameState.population.dead - gameState.population.healed - gameState.population.infected
 }

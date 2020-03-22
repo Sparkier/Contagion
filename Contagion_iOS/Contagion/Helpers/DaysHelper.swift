@@ -13,3 +13,13 @@ func daysElapsed(gameState: GameState) -> Int {
     let diffInDays = Calendar.current.dateComponents([.day], from: gameState.beginTime, to: compareDate).day
     return diffInDays ?? 0
 }
+
+func daysUntil(gameState: GameState, day: Int) -> Int {
+    return day - daysElapsed(gameState: gameState)
+}
+
+func secondsElapsed(since: Date, until: Date) -> Int {
+    let compareDate = Calendar.current.date(byAdding: .second, value: 1, to: until)!
+    let diffInSeconds = Calendar.current.dateComponents([.second], from: since, to: compareDate).second
+    return diffInSeconds ?? 0
+}

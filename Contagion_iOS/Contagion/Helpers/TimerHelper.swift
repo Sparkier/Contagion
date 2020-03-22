@@ -7,19 +7,26 @@
 //
 
 import Foundation
+import UIKit
 
 class TimerHelper {
     var timer: Timer?
+    var gameState: GameState?
 
-    func startTimer(gameState: GameState) {
+    func startTimer(gameState: GameState, dayDuration: Double) {
         guard timer == nil else { return }
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
-            gameState.time = Calendar.current.date(byAdding: .day, value: 1, to: gameState.time) ?? gameState.time
-        })
+        self.gameState = gameState
+        timer = Timer.scheduledTimer(timeInterval: dayDuration, target: self, selector: #selector(newDay), userInfo: nil, repeats: true)
+
     }
 
     func stopTimer() {
         timer?.invalidate()
         timer = nil
+    }
+
+    @objc func newDay() {
+        guard gameState != nil else { return }
+        gameState!.time = Calendar.current.date(byAdding: .day, value: 1, to: gameState!.time) ?? gameState!.time
     }
 }

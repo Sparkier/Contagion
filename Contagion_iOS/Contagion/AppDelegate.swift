@@ -8,14 +8,22 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let notificationCenter = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert]
+        notificationCenter.requestAuthorization(options: options, completionHandler: { (granted, error) in
+                if let errorResult = error {
+                    print(errorResult)
+                }
+            }
+        )
+        notificationCenter.delegate = self
         return true
     }
 

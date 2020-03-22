@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var history: History
     @ObservedObject var gameState: GameState
+    @State var dayDuration: Double
+    @State var winViewDismissed: Bool = false
     let timerHelper: TimerHelper
 
     var body: some View {
@@ -39,8 +41,27 @@ struct ContentView: View {
                 }.padding().background(Color(UIColor(named: "StatsBackgroundColor")!))
                 CustomScrollView(scrollToEnd: true) {
                     ForEach(0..<self.history.states.count, id: \.self) { historyIndex in
-                        HistoryElementView(state: self.history.states[historyIndex], timerHelper: self.timerHelper, historyIndex: historyIndex).environmentObject(self.gameState).environmentObject(self.history)
+                        HistoryElementView(state: self.history.states[historyIndex], timerHelper: self.timerHelper, historyIndex: historyIndex, dayDuration: self.$dayDuration, winViewDismissed: self.$winViewDismissed).environmentObject(self.gameState).environmentObject(self.history)
                     }
+                }
+            }
+            if history.states.last!.state.stateTexts.last!.day <= daysElapsed(gameState: gameState) && history.states.last!.state.stateActions ==  nil && !winViewDismissed {
+                Color(UIColor(named: "MainBackgroundColor")!)
+                    .edgesIgnoringSafeArea(.all)
+                VStack(spacing: 10) {
+                    Text(gameState.population.dead == 82000000 ? "Verloren!" : "Besiegt!").font(.system(size: 32))
+                    Text("😊 Nie Infiziert: \(gameState.population.healthy)")
+                    Text("💚 Geheilt: \(gameState.population.healed)")
+                    Text("💀 Gestorben: \(gameState.population.dead)")
+                    Text("🌞 Dauer der  Pandemie \(daysElapsed(gameState: gameState)) Tage")
+                    Text("Du kannst alternative Szenarien spielen, indem du eine deiner Entscheidungen änderst. Wähle dazu einfach einen der nicht selektierten Entscheidungsbuttons aus!")
+                    Button(action: {
+                        self.winViewDismissed = true
+                    }) {
+                        Text("Entscheidungen Ändern")
+                    }.buttonStyle(WinGradientButtonStyle())
+                }.padding().background(Color(UIColor(named: "StatsBackgroundColor")!)).cornerRadius(15.0).onAppear {
+                    self.timerHelper.stopTimer()
                 }
             }
         }
@@ -51,8 +72,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let timerHelper = TimerHelper()
         let gameState = GameState()
-        timerHelper.startTimer(gameState: gameState)
-        return ContentView(history: History(), gameState: gameState, timerHelper: timerHelper)
+        timerHelper.startTimer(gameState: gameState, dayDuration: 1)
+        return ContentView(history: History(), gameState: gameState, dayDuration: 1, timerHelper: timerHelper)
     }
 }
 
@@ -144,5 +165,17 @@ extension ViewHeightKey: ViewModifier {
         return content.background(GeometryReader { proxy in
             Color.clear.preference(key: Self.self, value: proxy.size.height)
         })
+    }
+}
+
+struct WinGradientButtonStyle: ButtonStyle {
+    private let buttonGradient = LinearGradient(gradient: Gradient(colors: [Color(UIColor(named: "ButtonColor1")!), Color(UIColor(named: "ButtonColor2")!)]), startPoint: .leading, endPoint: .trailing)
+
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(Color.white)
+            .padding()
+            .background(buttonGradient)
+            .cornerRadius(15.0)
     }
 }

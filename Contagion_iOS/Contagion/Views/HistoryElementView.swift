@@ -12,6 +12,8 @@ struct HistoryElementView: View {
     let state: HistoryElement
     let timerHelper: TimerHelper
     let historyIndex: Int
+    @Binding var dayDuration: Double
+    @Binding var winViewDismissed: Bool
     @EnvironmentObject var history: History
     @EnvironmentObject var gameState: GameState
 
@@ -21,14 +23,12 @@ struct HistoryElementView: View {
                 HistoryElementTextView(stateText: stateText).environmentObject(self.gameState)
             }
             if state.state.stateTexts.last!.day <= daysElapsed(gameState: gameState) {
-                HStack {
+                VStack(spacing: 10) {
                     state.state.stateActions.map { stateActions in
                         ForEach(0..<stateActions.count) { i in
-                            HistoryElementActionView(stateAction: stateActions[i], timerHelper: self.timerHelper, index: i, historyIndex: self.historyIndex, historyDays: self.state.state.stateTexts.last!.day).environmentObject(self.gameState).environmentObject(self.history)
+                            HistoryElementActionView(stateAction: stateActions[i], timerHelper: self.timerHelper, index: i, historyIndex: self.historyIndex, historyDays: self.state.state.stateTexts.last!.day, dayDuration: self.$dayDuration, winViewDismissed: self.$winViewDismissed).environmentObject(self.gameState).environmentObject(self.history)
                         }
                     }
-                }.onAppear {
-                    self.timerHelper.stopTimer()
                 }
             }
         }.padding()

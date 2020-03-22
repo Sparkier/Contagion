@@ -29,6 +29,8 @@ struct HistoryElementView: View {
                             HistoryElementActionView(stateAction: stateActions[i], timerHelper: self.timerHelper, index: i, historyIndex: self.historyIndex, historyDays: self.state.state.stateTexts.last!.day, dayDuration: self.$dayDuration, winViewDismissed: self.$winViewDismissed).environmentObject(self.gameState).environmentObject(self.history)
                         }
                     }
+                }.onAppear {
+                    self.timerHelper.stopTimer()
                 }
             }
         }.padding()

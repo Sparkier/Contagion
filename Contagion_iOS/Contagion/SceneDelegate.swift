@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var gameState: GameState?
     var timerHelper: TimerHelper = TimerHelper()
     var backGroundTime: Date?
-    let dayDuration: Double = 1
+    let dayDuration: Double = 5
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

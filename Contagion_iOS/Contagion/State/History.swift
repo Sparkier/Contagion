@@ -68,14 +68,14 @@ func changeActionOne(_ gameState: GameState) {
 }
 
 func changeActionTwo(_ gameState: GameState) {
-    gameState.money = -5000
+    gameState.money = -13700
 }
 
 func changeActionThree(_ gameState: GameState) {
 }
 
 func changeActionFour(_ gameState: GameState) {
-    gameState.mood = -1.1
+    gameState.mood = -78.9
 }
 
 func changeActionFive(_ gameState: GameState) {

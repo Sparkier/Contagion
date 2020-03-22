@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,6 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var history: History?
     var gameState: GameState?
     var timerHelper: TimerHelper = TimerHelper()
+    var backGroundTime: Date?
+    let dayDuration: Double = 1
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -29,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let contentView = ContentView(history: history!, gameState: gameState!, timerHelper: timerHelper).environment(\.managedObjectContext, context)
+        let contentView = ContentView(history: history!, gameState: gameState!, dayDuration: dayDuration, timerHelper: timerHelper).environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -38,8 +41,81 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
-        
-        timerHelper.startTimer(gameState: gameState!)
+
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        timerHelper.startTimer(gameState: gameState!, dayDuration: dayDuration)
+    }
+
+    @objc func appMovedToBackground() {
+        backGroundTime = NSDate.now
+        let center = UNUserNotificationCenter.current()
+        let contentAction = UNMutableNotificationContent()
+        contentAction.subtitle = "Hilfe!"
+        contentAction.body = "Dein Land braucht dich!"
+        contentAction.threadIdentifier = "local-notificcations"
+        if daysElapsed(gameState: gameState!) >= history!.states.last!.state.stateTexts.last!.day { // Action already displayed
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: false)
+            let identifier = "UYLLocalNotification"
+            let request = UNNotificationRequest(identifier: identifier, content: contentAction, trigger: trigger)
+            center.add(request, withCompletionHandler: { (error) in
+                if let error = error {
+                    print(error)
+                }
+            })
+        } else {
+            for stateText in history!.states.last!.state.stateTexts {
+                let daysTo = daysUntil(gameState: gameState!, day: stateText.day)
+                if  daysTo > 0 {
+                    let stateAction = UNMutableNotificationContent()
+                    let author = stateText.author
+                    let text = stateText.text
+                    stateAction.subtitle = author
+                    stateAction.body = text
+                    stateAction.threadIdentifier = "local-notificcations"
+                    print(Double(daysTo) * dayDuration)
+                    // TODO: Debug this notification
+//                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(daysTo)*dayDuration, repeats: false)
+//                    let identifier = "UYLLocalNotification"
+//                    let request = UNNotificationRequest(identifier: identifier, content: stateAction, trigger: trigger)
+//                    center.add(request, withCompletionHandler: { (error) in
+//                        if let error = error {
+//                            print(error)
+//                        } else {
+//                            print("added")
+//                        }
+//                    })
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(daysTo)*dayDuration, repeats: false)
+                    let identifier = "UYLLocalNotification"
+                    let request = UNNotificationRequest(identifier: identifier, content: contentAction, trigger: trigger)
+                    center.add(request, withCompletionHandler: { (error) in
+                        if let error = error {
+                            print(error)
+                        }
+                    })
+                }
+            }
+            let daysToAction = daysUntil(gameState: gameState!, day: history!.states.last!.state.stateTexts.last!.day)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(daysToAction)*dayDuration, repeats: false)
+            let identifier = "UYLLocalNotification"
+            let request = UNNotificationRequest(identifier: identifier, content: contentAction, trigger: trigger)
+            center.add(request, withCompletionHandler: { (error) in
+                if let error = error {
+                    print(error)
+                }
+            })
+        }
+    }
+
+    @objc func appMovedToForeground() {
+        guard gameState != nil else { return }
+        let secondsPassed = secondsElapsed(since: gameState!.beginTime, until: NSDate.now)
+        if secondsPassed / Int(dayDuration) > history!.states.last!.state.stateTexts.last!.day {
+            gameState!.time = Calendar.current.date(byAdding: .day, value: history!.states.last!.state.stateTexts.last!.day, to: gameState!.beginTime) ?? gameState!.time
+        } else {
+            gameState!.time = Calendar.current.date(byAdding: .day, value: secondsPassed / Int(dayDuration), to: gameState!.beginTime) ?? gameState!.time
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

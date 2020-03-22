@@ -28,7 +28,7 @@ struct ContentView: View {
                         Text("💀 \(formatPeopleNumber(number: gameState.population.dead))")
                     }
                     Spacer()
-                    Text("💵 \(gameState.money) €")
+                    Text("💵 \(formatMoneyNumber(number: gameState.money))")
                     Spacer()
                     Text(formatMood(mood: gameState.mood))
                     Spacer()

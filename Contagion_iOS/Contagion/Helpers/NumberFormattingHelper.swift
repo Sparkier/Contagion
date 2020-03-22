@@ -28,8 +28,22 @@ func formatPeopleNumber(number: Int) -> String {
     }
 }
 
+func formatMoneyNumber(number: Int) -> String {
+    if abs(number) > 1000000 {
+        let displayNumber = number / 1000000
+        let displayNumberComma = abs(number / 100000 % 10)
+        return "\(displayNumber).\(displayNumberComma) M"
+    } else if abs(number) > 1000 {
+        let displayNumber = number / 1000
+        let displayNumberComma = abs(number / 100 % 10)
+        return "\(displayNumber).\(displayNumberComma) K"
+    } else {
+        return "\(number)"
+    }
+}
+
 func formatDate(date: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd.MM.yy"
+    dateFormatter.dateFormat = "dd.MM."
     return dateFormatter.string(from: date)
 }
